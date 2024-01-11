@@ -1,0 +1,108 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <!-- logo -->
+  <div class="logo-container" [@fadeInOut]="'in'" (click)="toggleCollapse()">
+    <img
+      class="logo-icon"
+      src="../../assets/erp-logo.png"
+      alt=""
+    />
+
+    <div class="logo-text-div">
+      <h5 class="logo-text" *ngIf="collapsed">B-Quick ERP</h5>
+      <p class="text" *ngIf="collapsed">Powered By Fujishka</p>
+    </div>
+
+    <!-- close btn -->
+    <button
+      class="close-btn"
+      *ngIf="collapsed"
+      [@fadeInOut]="'in'"
+      (click)="closeSidenav()"
+    >
+      <span class="material-symbols-rounded close">chevron_left</span>
+    </button>
+  </div>
+
+  <!-- menu list -->
+  <div class="scrollwrap scrollwrap_delay">
+    <p class="text" *ngIf="collapsed">Overview</p>
+    <ul class="sidenav-nav">
+      <li class="sidenav-nav-item" *ngFor="let data of navData">
+        <div
+          class="sidenav-nav-link"
+          (click)="handleClick(data)"
+          *ngIf="data.items && data.items.length > 0"
+          [ngClass]="getActiveClass(data)"
+        >
+          <span
+            class="material-symbols-rounded icon"
+            (click)="toggleCollapse()"
+            >{{ data.icon }}</span
+          >
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            {{ data.label }}
+          </span>
+          <i
+            *ngIf="data.items && collapsed"
+            class="menu-collapse-icon"
+            [ngClass]="
+              !data.expanded ? 'fal fa-angle-right' : 'fal fa-angle-down'
+            "
+          ></i>
+        </div>
+
+        <div
+          class="sidenav-nav-link"
+          *ngIf="!data.items || (data.items && data.items.length === 0)"
+          [routerLink]="[data.routerLink]"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <span class="material-symbols-rounded icon">{{ data.icon }}</span>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            {{ data.label }}
+          </span>
+        </div>
+
+        <div *ngIf="collapsed && data.items && data.items.length > 0">
+          <app-sub-menu
+            [data]="data"
+            [collapsed]="collapsed"
+            [multiple]="multiple"
+            [expanded]="data.expanded"
+          ></app-sub-menu>
+        </div>
+      </li>
+    </ul>
+
+    <p class="text" *ngIf="collapsed">System</p>
+    <ul class="sidenav-nav">
+      <li class="sidenav-nav-item">
+        <div routerLink="settings" class="sidenav-nav-link">
+          <span class="material-symbols-rounded icon">settings</span>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            Settings
+          </span>
+        </div>
+      </li>
+
+      <li class="sidenav-nav-item">
+        <div class="sidenav-nav-link">
+          <span class="material-symbols-rounded icon">help</span>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            Help
+          </span>
+        </div>
+      </li>
+
+      <li class="sidenav-nav-item">
+        <div class="sidenav-nav-link">
+          <span class="material-symbols-rounded icon">logout</span>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            Logout
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

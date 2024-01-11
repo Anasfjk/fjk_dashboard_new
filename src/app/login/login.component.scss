@@ -1,0 +1,165 @@
+@import "/src/styles.scss";
+
+.login-div {
+  width: 100vw;
+  height: 100vh;
+  // position: absolute;
+  // top: -75px;
+  // left: -70px;
+  z-index: 999;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media-md {
+    height: 100vh;
+    // left: -85px;
+    background-color: $color3;
+  }
+
+  // @include media-lg {
+  //   top: -96px;
+  //   left: -117px;
+  // }
+
+  .login {
+    @include media-md {
+      max-width: 1100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 15px;
+      background-color: $white;
+    }
+
+    .image-div {
+      display: none;
+
+      @include media-lg {
+        display: block;
+      }
+
+      img {
+        width: 600px;
+        border-radius: 15px 0 0 15px;
+      }
+
+      .content {
+        max-width: 400px;
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        color: $white;
+
+        .title {
+          font-size: $font-3-1;
+        }
+
+        p {
+          line-height: 1.4;
+        }
+      }
+    }
+
+    .input-div {
+      padding: 1.5rem;
+
+      @include media-md {
+        padding: 2rem 6rem 2rem 2rem;
+      }
+
+      img {
+        width: 110px;
+        margin: auto;
+      }
+
+      .form-div {
+        margin-top: $s4;
+
+        .form-floating {
+          margin-bottom: 1rem;
+
+          input {
+            min-height: 50px;
+            height: 50px;
+          }
+
+          label {
+            font-size: $fontMob-1;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .btn-div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        button {
+          width: 100%;
+          @include md-btn;
+          @include btn1;
+          border: 1px solid $borderGray;
+          padding: 1rem 1.125rem;
+        }
+
+        a {
+          margin-top: 1rem;
+          font-size: $fontMob-2;
+          font-weight: 500;
+          color: $color1;
+          padding-bottom: 2rem;
+
+          @include media-md {
+            font-size: $baseline;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .text {
+        padding-top: 2rem;
+        text-align: center;
+        font-size: $fontMob-1;
+        font-weight: 400;
+        margin-top: 0;
+        border-top: 1px solid $borderGray;
+
+        @include media-md {
+          font-size: $baseline;
+        }
+
+        a {
+          color: $color1;
+          font-weight: 500;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        &::after {
+          content: "OR";
+          position: absolute;
+          top: -13px;
+          left: 50%;
+          transform: translate(-50%);
+          width: 35px;
+          height: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $white;
+          font-size: $baseline;
+          font-weight: 600;
+          color: $color1;
+        }
+      }
+    }
+  }
+}

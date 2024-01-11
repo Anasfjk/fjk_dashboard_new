@@ -1,0 +1,120 @@
+@import "/src/styles.scss";
+
+// Breadcrumb
+#setting-breadcrumb {
+  @include breadcrumb;
+}
+
+// tab
+.tab-left {
+  padding: 1rem 0.5rem;
+  background-color: $white;
+  overflow-x: scroll;
+
+  @include media-md {
+    display: flex;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+
+    @include media-md {
+      width: 25%;
+      flex-wrap: wrap;
+      flex-direction: column;
+      background-color: $white;
+      border-radius: $radius;
+      padding: 1rem;
+    }
+
+    button {
+      padding: 0.75rem 1rem;
+      white-space: nowrap;
+      font-weight: 500;
+      color: $black;
+      border-radius: $radius $radius 0 0;
+      border-bottom: 1px solid $borderGray;
+      font-size: $fontMob-2;
+      text-align: left;
+
+      @include media-md {
+        font-size: $baseline;
+        border-radius: $radius;
+        border-bottom: unset;
+        white-space: unset;
+        line-height: 1.5;
+      }
+    }
+
+    .active {
+      background-color: $color3;
+      color: $black;
+    }
+  }
+
+  .tab-content {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 1rem 0.5rem;
+
+    @include media-md {
+      width: 75%;
+      background-color: $white;
+      padding: 1rem;
+      border-radius: $radius;
+    }
+
+    .tab-pane {
+      @include form-group;
+      
+      .tab {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $borderGray;
+        overflow-x: scroll;
+
+        @include media-lg {
+          justify-content: center;
+          border-bottom: unset;
+        }
+
+        li {
+          button {
+            font-size: $fontMob-2;
+            padding: 0.5rem;
+            white-space: nowrap;
+            border-radius: $radius $radius 0 0;
+            font-weight: 500;
+
+            @include media-md {
+              font-size: $fontMob-1;
+              padding: 0.75rem;
+            }
+
+            @include media-lg{
+              border-bottom: 1px solid $borderGray;
+            }
+          }
+
+          .active {
+            border-radius: $radius $radius 0 0;
+            background-color: $color1;
+            color: $white;
+
+            @include media-lg{
+              background-color: transparent;
+              border-bottom: 1px solid $color1;
+              color: $black;
+            }
+          }
+        }
+      }
+      .inside-tab-content {
+      }
+    }
+  }
+}

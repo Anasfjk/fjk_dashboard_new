@@ -1,0 +1,46 @@
+<div class="login-div">
+    <div class="login">
+        <div class="image-div">
+            <img src="../../assets/login-img.png" alt="">
+
+            <div class="content">
+                <h3 class="title">Welcome Back !</h3>
+                <p>The ultimate business management software for your company.</p>
+            </div>
+        </div>
+        <div class="input-div">
+            <img src="../../assets/fujishka-logo.png" alt="logo" class="logo">
+
+            <form #loginf="ngForm" class="form-div" (ngSubmit)="loginFunct(loginf)">
+                <span class="text-danger">{{ result }} </span>
+                <div class="form-floating">
+                    <input [(ngModel)]="usr_email" name="usr_email" type="text" class="form-control form-group" id="userName" placeholder="">
+                    <label for="userName">User Name</label>
+                </div>
+                <div class="form-floating">
+                    <input [(ngModel)]="usr_password" name="usr_password" type="password" class="form-control form-group" id="password" placeholder="">
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-floating">
+                    <input [(ngModel)]="company_code" name="company_code" type="text" class="form-control form-group" id="companyCode" placeholder="">
+                    <label for="companyCode">Company Code</label>
+                </div>
+                <button (click)="loginFunct(loginf)"
+                (keyup.enter)="loginFunct(loginf)" type="submit" class="btn btn-primary">Login</button>
+            </form>
+            
+
+            <div class="btn-div">
+                <button (click)="loginFunct(loginf)"
+                (keyup.enter)="loginFunct(loginf)">Login</button>
+                <a href="https://fujishka.com/"
+                target="_blank">Forgot Password ?</a>
+            </div>
+
+            <p class="text">Don't Have An Account ? <a href="" class="link">Create Your Account</a>, It's Takes Less
+                Than
+                a
+                Minute</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,183 @@
+<!-- top head -->
+<div class="top-head">
+  <div class="head-left">
+    <h5 class="heading">Overview</h5>
+  </div>
+  <Button class="head-right"  data-bs-toggle="dropdown"
+  aria-expanded="false">
+    <span class="material-symbols-rounded"> add </span>
+    Create
+  </Button>
+  <ul class="dropdown-menu add-btn-menu">
+    <li>
+      <a class="dropdown-item">
+        <span class="material-symbols-rounded">
+          inventory_2
+          </span>Create Product</a
+      >
+    </li>
+    <li>
+      <a class="dropdown-item">
+        <span class="material-symbols-rounded">
+          payments
+          </span>Update Rate</a
+      >
+    </li>
+    <li>
+      <a class="dropdown-item">
+        <span class="material-symbols-rounded">
+          groups
+          </span>Create Customer</a
+      >
+    </li>
+    <li>
+      <a class="dropdown-item">
+        <span class="material-symbols-rounded">
+          group_add
+          </span>Create Supplier</a
+      >
+    </li>
+  </ul>
+</div>
+
+<!-- card -->
+<div class="card-div">
+  <div class="card-body">
+    <div class="cards">
+      <p class="text">Total Sales</p>
+      <h4 class="count">$354.5k</h4>
+      <div class="badge-div">
+        <p class="badge"><span class="pending">+$20.9k</span>Since last week</p>
+      </div>
+    </div>
+    <div class="chart-div">
+      <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="pieChart"
+        style="width: 100px; height: 100px; display: block"
+      ></highcharts-chart>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="cards">
+      <p class="text">Total Sales</p>
+      <h4 class="count">$354.5k</h4>
+      <div class="badge-div">
+        <p class="badge">
+          <span class="cancelled">+$20.9k</span>Since last week
+        </p>
+      </div>
+    </div>
+    <div class="chart-div">
+      <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="pieChart"
+        style="width: 100px; height: 100px; display: block"
+      ></highcharts-chart>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="cards">
+      <p class="text">Total Sales</p>
+      <h4 class="count">$354.5k</h4>
+      <div class="badge-div">
+        <p class="badge"><span class="pending">+$20.9k</span>Since last week</p>
+      </div>
+    </div>
+    <div class="chart-div">
+      <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="pieChart"
+        style="width: 100px; height: 100px; display: block"
+      ></highcharts-chart>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="cards">
+      <p class="text">Total Sales</p>
+      <h4 class="count">$354.5k</h4>
+      <div class="badge-div">
+        <p class="badge"><span class="pending">+$20.9k</span>Since last week</p>
+      </div>
+    </div>
+    <div class="chart-div">
+      <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="pieChart"
+        style="width: 100px; height: 100px; display: block"
+      ></highcharts-chart>
+    </div>
+  </div>
+</div>
+
+<!-- chart -->
+<div class="chart-main">
+  <div class="charts">
+    <highcharts-chart
+      [Highcharts]="Highcharts"
+      [options]="chartOptions1"
+      style="width: 100%; height: 400px; display: block"
+    ></highcharts-chart>
+  </div>
+
+  <div class="charts">
+    <highcharts-chart 
+    [Highcharts]="Highcharts"
+    [options]="vatPieChart"
+  
+    style="width: 100%; height: 400px; display: block;"
+  ></highcharts-chart>
+  </div>
+</div>
+
+<div class="chart-main">
+  <div class="charts">
+    <highcharts-chart 
+    [Highcharts]="Highcharts"
+    [options]="salesAnalyseChart"
+  
+    style="width: 100%; height: 400px; display: block;"
+  ></highcharts-chart>
+  </div>
+
+  <div class="charts">
+    <highcharts-chart 
+    [Highcharts]="Highcharts"
+    [options]="purchaseAnalyseChart"
+  
+    style="width: 100%; height: 400px; display: block;"
+  ></highcharts-chart>
+  </div>
+</div>
+
+<div class="chart-main">
+  <div class="charts1">
+    <highcharts-chart 
+    [Highcharts]="Highcharts"
+    [options]="topSellingProductChart"
+  
+    style="width: 100%; height: 400px; display: block;"
+  ></highcharts-chart>
+  </div>
+
+  <div class="charts1">
+    <highcharts-chart 
+    [Highcharts]="Highcharts"
+    [options]="topSellingCustomerChart"
+  
+    style="width: 100%; height: 400px; display: block;"
+  ></highcharts-chart>
+  </div>
+
+  <div class="charts1">
+    <highcharts-chart 
+    [Highcharts]="Highcharts"
+    [options]="topSupplierChart"
+  
+    style="width: 100%; height: 400px; display: block;"
+  ></highcharts-chart>
+  </div>
+</div>

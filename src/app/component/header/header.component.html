@@ -1,0 +1,163 @@
+<div class="head" [ngClass]="getHeadClass()">
+  <div class="head-content">
+    <div class="head-conten-left">
+      <p class="text">FUJISHKA TEST_1 تقنيات فوجيشكا</p>
+      <h5 class="heading">FUJISHKA BRANCH C-BRF</h5>
+    </div>
+
+    <div class="head-content-center">
+      <!-- search bar -->
+      <div class="search-container">
+        <div class="normal-search">
+          <input type="search" class="search" name id placeholder="Search..." />
+          <span class="material-symbols-rounded search-icon">
+            search
+            </span>
+        </div>
+
+        <div data-bs-toggle="dropdown"
+        aria-expanded="false" class="search-menu">
+        <span class="material-symbols-rounded search-icon">
+          search
+          </span>
+        </div>
+        <ul class="dropdown-menu mob-menu">
+          <li>
+            <div class="mob-search">
+              <input type="search" class="search" name id placeholder="Search..." />
+              <span class="material-symbols-rounded search-icon">
+                search
+                </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="head-content-right">
+      <div class="head-menu">
+        <!-- lang -->
+        <div
+          class="head-menu-item"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <button class="head-menu-btn">
+            <img
+              src="../../assets/lang1.png"
+              class="flag"
+              alt="flag"
+            />
+          </button>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item"
+                ><img
+                  src="../../assets/lang2.png"
+                  class="flag"
+                  alt="flag"
+                />Arabic</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item"
+                ><img
+                  src="../../assets/lang3.png"
+                  class="flag"
+                  alt="flag"
+                />Chinese</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- sales order -->
+        <div class="head-menu-item">
+          <button class="head-menu-btn" data-customTooltip="Sales Order">
+            <span class="material-symbols-rounded menu-icon"> orders </span>
+          </button>
+
+          <span class="alert">2</span>
+        </div>
+
+        <!-- Post dated cheque -->
+        <div class="head-menu-item">
+          <button class="head-menu-btn" data-customTooltip="Post Dated Cheque">
+            <span class="material-symbols-rounded menu-icon">
+              credit_card
+            </span>
+          </button>
+
+          <span class="alert">2</span>
+        </div>
+
+        <!-- Expiry Notification -->
+        <div class="head-menu-item">
+          <button
+            class="head-menu-btn"
+            data-customTooltip="Batch Expiry Notification"
+          >
+            <span class="material-symbols-rounded menu-icon">
+              notifications
+            </span>
+          </button>
+
+          <span class="alert">2</span>
+        </div>
+      </div>
+
+      <!-- profile -->
+      <div
+        class="head-user-avatar-container"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+          src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          class="user-avatar"
+          alt="user"
+        />
+        <div class="user-details">
+          <h5 class="name">Aparna Jhon</h5>
+          <p class="text">Team Lead</p>
+        </div>
+      </div>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item">
+            <span class="material-symbols-rounded"> person </span>My Profile</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item">
+            <span class="material-symbols-rounded"> settings </span>Settings</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item">
+            <span class="material-symbols-rounded">
+              calendar_month
+              </span>Activity</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item">
+            <span class="material-symbols-rounded"> help </span>Support</a
+          >
+        </li>
+        <li><hr class="dropdown-divider" /></li>
+        <li>
+          <a class="dropdown-item">
+            <span class="material-symbols-rounded"> logout </span>Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="head-mob-content">
+  <p class="text">FUJISHKA TEST_1 تقنيات فوجيشكا</p>
+  <h5 class="heading">FUJISHKA BRANCH C-BRF</h5>
+</div>

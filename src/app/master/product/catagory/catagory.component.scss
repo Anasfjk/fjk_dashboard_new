@@ -1,0 +1,32 @@
+@import "/src/styles.scss";
+
+// Breadcrumb
+#catagory-breadcrumb {
+  @include breadcrumb;
+}
+
+// Table
+#catagory-table {
+  @include table-div;
+}
+
+// modal popup
+#catagoryAddList {
+  @include modal;
+
+  .modal-dialog {
+    .modal-content {
+      @include media-md {
+        min-width: 700px;
+      }
+
+      .modal-footer {
+        button {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+

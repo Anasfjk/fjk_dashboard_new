@@ -1,0 +1,709 @@
+// media query
+$xs: 360px;
+$sm: 568px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xxl: 1800px;
+
+@mixin media-xs {
+  @media (min-width: #{$xs}) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (min-width: #{$sm}) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (min-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (min-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media (min-width: #{$xl}) {
+    @content;
+  }
+}
+
+@mixin media-xxl {
+  @media (min-width: #{$xxl}) {
+    @content;
+  }
+}
+
+@mixin media-CustomMin($min) {
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin media-CustomMax($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin media-Custom($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin media-MaxHeight($max) {
+  @media (max-height: $max) {
+    @content;
+  }
+}
+
+@mixin media-MinHeight($min) {
+  @media (min-height: $min) {
+    @content;
+  }
+}
+
+// btn section
+@mixin btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  margin-top: $baseline;
+  border-radius: $radius;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  overflow: hidden;
+  transition: $transition1;
+  cursor: pointer;
+
+  i {
+    top: 2px;
+    margin-left: 0.25rem;
+    transition: $transition1;
+  }
+}
+
+@mixin btn1 {
+  @include btn;
+  color: $white;
+  background-color: $color1;
+
+  i {
+    color: $white;
+  }
+
+  &:hover {
+    color: $black;
+    background-color: $white;
+    border: 1px solid $color1;
+  }
+}
+
+@mixin btn2 {
+  @include btn;
+  color: $black;
+  background-color: $white;
+  border: 1px solid $color1;
+
+  i {
+    color: $black;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $color1;
+  }
+}
+
+@mixin btn3 {
+  @include btn;
+  color: $white;
+  background-color: $yellow;
+
+  i {
+    color: $black;
+  }
+
+  &:hover {
+    color: $black;
+    background-color: $color3;
+  }
+}
+
+// Button size
+@mixin xs-btn {
+  font-size: $fontMob-2;
+  padding: 0.15rem 0.75rem;
+}
+
+@mixin sm-btn {
+  font-size: $fontMob-2;
+  padding: 0.5rem $baseline;
+}
+
+@mixin md-btn {
+  font-size: $fontSmall;
+  padding: 0.75rem $font-5-5;
+}
+
+@mixin lg-btn {
+  font-size: $baseline;
+  padding: $baseline $font-3;
+
+  @include media-sm {
+    font-size: $font-5-5;
+  }
+
+  @include media-md {
+    font-size: $font-5-4;
+  }
+
+  @include media-lg {
+    font-size: $font-5-3;
+  }
+}
+
+// alert
+@mixin alert {
+  width: 90px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.25rem;
+  font-size: $fontMob-3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius;
+  font-weight: 500;
+}
+
+@mixin pending {
+  background-color: #fff0cc;
+  color: $yellow;
+}
+
+@mixin cancelled {
+  background-color: #ffdbdb;
+  color: $red;
+}
+
+@mixin success {
+  background-color: #e4f4ec;
+  color: $green;
+}
+
+@mixin info {
+  background-color: #d9e6fb;
+  color: #4285f4;
+}
+
+// common Mixin
+
+// poppup modal
+@mixin modal {
+  width: 100%;
+  background-color: #0000007a;
+
+  .modal-dialog {
+    @include media-md() {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%);
+      display: flex;
+      justify-content: center;
+    }
+
+    .modal-content {
+      border: unset;
+      .modal-header {
+        border: unset;
+        background-color: $color1;
+        padding: 0.75rem 1rem;
+
+        .modal-title {
+          font-size: $fontMob-1;
+          color: $white;
+
+          @include media-lg {
+            font-size: $font-5-5;
+          }
+        }
+
+        .btn-close {
+          background-color: $white;
+          font-size: 10px;
+
+          &:focus {
+            box-shadow: unset;
+          }
+        }
+      }
+
+      .modal-body {
+        border: unset;
+        padding: 1rem 1rem 0 1rem;
+
+        @include media-md {
+          padding: 1.5rem 1rem 0 1rem;
+        }
+
+        .chequIssueDate {
+          font-size: $fontMob-2;
+        }
+
+        .form-group {
+          margin-bottom: 1rem;
+          @include form-group;
+
+          label {
+            font-weight: 500;
+          }
+
+          .form-control {
+            box-shadow: unset;
+            color: $black;
+            font-size: $fontMob-1;
+            appearance: auto !important;
+            margin-top: 0.5rem;
+
+            &:focus {
+              border-color: $color1;
+            }
+          }
+
+          .form-check-div {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+
+            .form-check {
+              display: flex;
+              align-items: center;
+              margin-right: 0.5rem;
+
+              .form-check-input {
+                width: 15px;
+
+                &:checked {
+                  background-color: $color1;
+                  border-color: $color1;
+                }
+
+                &:focus {
+                  border-color: $color1;
+                }
+              }
+
+              .form-check-label {
+                margin-bottom: -5px;
+                margin-left: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+
+      .modal-footer {
+        border: unset;
+
+        button {
+          @include sm-btn;
+          font-size: $fontMob-2;
+          font-weight: 500;
+        }
+
+        .reset {
+          @include btn3;
+          margin-top: 0;
+        }
+
+        .success {
+          @include btn1;
+          margin-top: 0;
+          border: 1px solid $color1;
+        }
+      }
+    }
+  }
+}
+
+// dropdown input
+@mixin form-group{
+  .select-box {
+    width: 100%;
+    font-size: $fontMob-1;
+    color: $black;
+    font-weight: 300;
+    margin-top: 0.5rem;
+  
+  
+    &__current {
+      border: 1px solid $borderGray;
+      border-radius: 5px;
+      cursor: pointer;
+      outline: none;
+  
+      &:hover {
+        border: 1px solid $color1;
+      }
+  
+      &:focus {
+        & + .select-box__list {
+          opacity: 1;
+          animation-name: none;
+          z-index: 1;
+  
+          .select-box__option {
+            cursor: pointer;
+          }
+        }
+  
+        .select-box__icon {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+    }
+  
+    &__icon {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      width: 12px;
+      opacity: 0.3;
+      transition: 0.2s ease;
+    }
+  
+    &__input {
+      display: none;
+  
+      &:checked + .select-box__input-text {
+        display: block;
+        font-size: $fontMob-1;
+        color: $black;
+        font-weight: 500;
+      }
+    }
+  
+    &__input-text {
+      display: none;
+      width: 100%;
+      margin: 0;
+      padding: 0.5rem;
+    }
+  
+    &__list {
+      position: absolute;
+      width: 100%;
+      padding: 0;
+      list-style: none;
+      opacity: 0;
+      animation-name: HideList;
+      animation-duration: 0.5s;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: step-start;
+      background-color: $white;
+      border: 1px solid $borderGray;
+      border-radius: 5px;
+    }
+  
+    &__option {
+      display: block;
+      padding: 0.75rem;
+  
+      &:hover,
+      &:focus {
+        color: $black;
+        background-color: $color3;
+        border-radius: $radius;
+      }
+    }
+  }
+  
+  @keyframes HideList {
+    from {
+      transform: scaleY(1);
+    }
+    to {
+      transform: scaleY(0);
+    }
+  }
+}
+
+// Table
+@mixin table-div {
+  .table-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white;
+    padding: 0 1rem;
+
+    @include media-md {
+      padding: 1rem;
+      border-radius: $radius;
+    }
+
+    @include media-lg {
+      margin-bottom: 0.5rem;
+    }
+
+    .search-div {
+      .search {
+        width: 225px;
+        height: 40px;
+        padding-left: 1.5rem;
+        background-color: $white;
+        border: 1px solid $borderGray;
+        box-shadow: none;
+        border-radius: $radius;
+        outline: 0;
+
+        @include media-md {
+          width: 400px;
+          padding-left: 2rem;
+          padding-right: 1rem;
+        }
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        font-size: $fontMob-2;
+        color: $gray;
+      }
+    }
+
+    .top-btn-div {
+      background-color: $color1;
+      margin-left: 0.5rem;
+      border-radius: $radius;
+      display: flex;
+      align-items: center;
+      color: $white;
+      transition: $transition1;
+
+      &:hover {
+        background-color: $white;
+        color: $black;
+        border: 1px solid $color1;
+        .top-btn {
+          color: $black;
+        }
+      }
+
+      .top-btn-icon {
+        height: 38px;
+        padding: 0.5rem;
+
+        @include media-md {
+          padding: 0.5rem 0 0.5rem 0.5rem;
+        }
+      }
+
+      .top-btn {
+        display: none;
+
+        @include media-md {
+          height: 35px;
+          padding: 0.65rem 0.5rem 0.5rem 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: $fontMob-1;
+          font-weight: 500;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .table {
+    overflow-x: auto;
+    margin-bottom: 0;
+    background-color: $white;
+    padding: 1rem;
+
+    @include media-lg {
+      border-radius: $radius;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        white-space: nowrap;
+        text-align: left;
+        border: 1px solid $lightGray;
+      }
+
+      th {
+        font-size: $fontMob-2;
+        cursor: pointer;
+        background-color: $lightGray;
+        color: $black;
+        padding: 0.75rem;
+      }
+
+      td {
+        font-size: $fontMob-2;
+        font-weight: 500;
+        padding: 0.25rem .75rem;
+      }
+
+      // status style
+      .status {
+        p {
+          @include alert;
+        }
+        .pending {
+          @include pending;
+        }
+
+        .cancelled {
+          @include cancelled;
+        }
+
+        .success {
+          @include success;
+        }
+
+        .info {
+          @include info;
+        }
+      }
+
+      .action-btn-div {
+        display: flex;
+        align-items: center;
+
+        .action-btn {
+          padding: 0.2rem;
+          margin-right: 0.25rem;
+          color: $white;
+          border-radius: $radius;
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          span {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          }
+        }
+
+        .success {
+          background-color: $color1;
+        }
+
+        .pending {
+          background-color: $yellow;
+        }
+
+        .delete {
+          background-color: $red;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    @include media-lg {
+      padding-top: 0;
+      border-radius: 0 0 $radius $radius;
+    }
+
+    button {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      cursor: pointer;
+      border: 1px solid $borderGray;
+      margin-right: 0.5rem;
+      border-radius: $radius;
+    }
+
+    .active {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color1;
+      color: $white;
+      border-radius: $radius;
+    }
+  }
+}
+
+// Breadcrumb
+@mixin breadcrumb {
+
+  @include media-lg {
+    padding-bottom: .5rem;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: $fontMob-1;
+    margin-top: 0;
+    color: $textGray;
+padding: 0.5rem;
+background-color: $white;
+
+    @include media-lg{
+      padding: 0;
+      padding-bottom: 0.5rem;
+      background-color: transparent;
+    }
+
+    a {
+      margin: 0 0.5rem;
+
+      span {
+        cursor: pointer;
+      }
+
+      &:hover {
+        color: $color1;
+      }
+    }
+
+    .active {
+      color: $color1;
+    }
+  }
+}

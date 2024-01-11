@@ -1,0 +1,6 @@
+@import "/src/styles.scss";
+
+// Breadcrumb
+#features-breadcrumb {
+  @include breadcrumb;
+}

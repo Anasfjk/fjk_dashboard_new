@@ -1,0 +1,104 @@
+/*Font Size*/
+$font-xxl: 4.624rem;
+$font-xl: 4.11rem;
+$font-lg: 3.653rem;
+$font-1: 3.247rem;
+$font-1-1: 2.887rem;
+$font-1-2: 2.566rem;
+$font-1-3: 2.281rem;
+$font-1-4: 2.027rem;
+$font-1-5: 1.802rem;
+$font-2: 2.887rem;
+$font-2-1: 2.566rem;
+$font-2-2: 2.281rem;
+$font-2-3: 2.027rem;
+$font-2-4: 1.802rem;
+$font-2-5: 1.602rem;
+$font-3: 2.566rem;
+$font-3-1: 2.281rem;
+$font-3-2: 2.027rem;
+$font-3-3: 1.802rem;
+$font-3-4: 1.602rem;
+$font-3-5: 1.424rem;
+$font-4: 2.281rem;
+$font-4-1: 2.027rem;
+$font-4-2: 1.802rem;
+$font-4-3: 1.602rem;
+$font-4-4: 1.424rem;
+$font-4-5: 1.266rem;
+$font-5: 2.027rem;
+$font-5-1: 1.802rem;
+$font-5-2: 1.602rem;
+$font-5-3: 1.424rem;
+$font-5-4: 1.266rem;
+$font-5-5: 1.125rem;
+$baseline: 1rem;
+$fontSmall: 0.9rem;
+$fontMob-1: 0.889rem;
+$fontMob-2: 0.79rem;
+$fontMob-3: 0.702rem;
+$fontMob-4: 0.624rem;
+$fontMob-5: 0.555rem;
+
+/*Radius*/
+$radius: 0.25rem;
+$inputRadius: 5px;
+
+/*Spacing*/
+$xxxlSpacing: 8.451rem;
+$xxlSpacing: 7.451rem;
+$xlSpacing: 5.96rem;
+$lgSpacing: 4.768rem;
+$mdSpacing: 3.815rem;
+$smSpacing: 3.052rem;
+$xsSpacing: 2.441rem;
+$s14: 8.6667rem;
+$s13: 8rem;
+$s12: 7.3333rem;
+$s11: 6.6667rem;
+$s10: 6rem;
+$s9: 5.3333rem;
+$s8: 4.6667rem;
+$s7: 4rem;
+$s6: 3.3333rem;
+$s5: 2.6667rem;
+$s4: 2rem;
+$s3: 1.3333rem;
+$s2: 0.6667rem;
+$s1: 0.3333rem;
+
+// color
+
+/*Primary Colors*/
+$color1: #09915f;
+$color2: #0e9100;
+$color3: #e7f1ee;
+/*Secondary Colors*/
+$white: #ffffff;
+$lightGray: #f8f8ff;
+$borderGray: #ebedf3;
+$visibleGray: #e0e0e0;
+$textGray: #909294;
+$gray: #5d5e5f;
+$darkGray: #242323;
+$black: #1b1b1b;
+
+/*Form Colors*/
+$red: #ec4c4c;
+$green: #3cc274;
+$blue: #546bd4;
+$yellow: #f5a905;
+$fGray: #919191;
+$inputBorder: #eef0f77a;
+$inputColor1: #2bb583;
+$inputColor2: #2bb583;
+$inputColor3: #2bb583;
+$inputColor4: #2bb583;
+
+/*Gradients*/
+$gradient1:  linear-gradient(to right top, #14c081, #11b377, #0ea66e, #0b9964, #078d5b);
+
+/*Transitions*/
+$transition1: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+$transition2: 0.5s cubic-bezier(0.37, 0, 0.63, 1);
+$transition3: 0.7s cubic-bezier(0.37, 0, 0.63, 1);

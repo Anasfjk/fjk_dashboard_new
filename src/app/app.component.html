@@ -1,0 +1,10 @@
+<ng-container *ngIf="this.router.url != '/login' && this.router.url != '/' && this.router.url.split('/')[1] != 'view_invoice' && this.router.url != '/sales-pos'">
+    <app-sidenav (onToggleSidenav)="onToggleSidenav($event)"></app-sidenav>
+    <app-header
+        [collapsed]="isSideNavCollapsed"
+        [screenWidth]="screenWidth"></app-header>
+    <app-body  [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth">
+    </app-body>
+    <app-footer [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-footer>
+</ng-container>
+<app-login *ngIf="this.router.url == '/login' || this.router.url == '/' "></app-login>

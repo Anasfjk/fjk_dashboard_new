@@ -1,0 +1,33 @@
+@import "/src/styles.scss";
+
+.body {
+  width: calc(100% - 4.3rem);
+  margin-left: 4.3rem;
+  transition: all 0.5s ease;
+  background-color: #f4f5f8;
+
+  @include media-md {
+    width: calc(100% - 5.3rem);
+    margin-left: 5.3rem;
+  }
+
+  @include media-lg {
+    padding: 6rem 2rem;
+    margin-left: 5.3rem;
+  }
+}
+
+.body-trimmed {
+  width: calc(100% - 15rem);
+  margin-left: 15rem;
+}
+
+.body-md-screen {
+  width: calc(100% - 4.3rem);
+  margin-left: 4.3rem;
+
+  @include media-md {
+    margin-left: 5rem;
+  }
+}
+

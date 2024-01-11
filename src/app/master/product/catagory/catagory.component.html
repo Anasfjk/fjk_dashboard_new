@@ -1,0 +1,202 @@
+<!-- Breadcrumb -->
+<div id="catagory-breadcrumb">
+  <p class="breadcrumb-text">
+    <a href="#"><span class="material-symbols-rounded">
+        home
+      </span></a> > <a>Product</a> > <a class="active">Catagory</a>
+  </p>
+</div>
+
+<!-- catagory table -->
+<div id="catagory-table">
+  <div class="table-top">
+    <div class="search-div">
+      <input type="search" class="search" name id placeholder="Type catagory name..." />
+      <i class="far fa-search search-icon"></i>
+    </div>
+
+    <div class="top-btn-div" type="button" data-bs-toggle="modal" data-bs-target="#catagoryAddList">
+      <span class="material-symbols-rounded top-btn-icon">add</span>
+      <button class="top-btn">Add Unit</button>
+    </div>
+  </div>
+
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Sl. No.</th>
+          <th>Category</th>
+          <th>Catagory Remarks</th>
+          <th>Tax Category</th>
+          <th>Token Printer</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let data of cats; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{data.cat_name}}</td>
+          <td>{{data.cat_remarks}}</td>
+          <td>{{data.cat_tax_cat_id }}</td>
+          <td>{{data.cat_token_printer}}</td>
+          <td class="action-btn-div">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#catagoryAddList" class="action-btn pending"
+              data-customTooltip="Edit">
+              <span class="material-symbols-rounded"> edit_square </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button>
+      <span class="material-symbols-rounded"> keyboard_double_arrow_left </span>
+    </button>
+    <button>
+      <span class="material-symbols-rounded"> keyboard_arrow_left </span>
+    </button>
+    <button>1</button>
+    <button>
+      <span class="material-symbols-rounded"> navigate_next </span>
+    </button>
+    <button>
+      <span class="material-symbols-rounded">
+        keyboard_double_arrow_right
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- Poppup Modal -->
+<div class="modal fade" id="catagoryAddList" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="staticBackdropLabel">Catagory</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body formDiv">
+
+        <div class="form-group mdDiv">
+          <label for="catagoryName">Catagory Name</label>
+          <input type="text" class="form-control" id="catagoryName" placeholder="Enter Catagory Name" />
+        </div>
+
+        <div class="form-group mdDiv">
+          <label for="taxCategory">Tax Category</label>
+          <div class="select-box select-box2">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="taxCategory1" value="1" name="taxCategory"
+                  checked="checked" />
+                <p class="select-box__input-text">Standard Rated @ 5%</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="taxCategory2" value="2" name="taxCategory" />
+                <p class="select-box__input-text">Standard Rated @ 50%</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="taxCategory3" value="3" name="taxCategory" />
+                <p class="select-box__input-text">Zero Rated</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="taxCategory4" value="4" name="taxCategory" />
+                <p class="select-box__input-text">Standard Rated @ 15%</p>
+              </div>
+              <img class="select-box__icon" src="../../assets/down-arrow.svg" alt="Arrow Icon" aria-hidden="true" />
+
+            </div>
+            <ul class="select-box__list">
+              <li>
+                <label class="select-box__option" for="taxCategory1" aria-hidden="aria-hidden">Standard Rated @
+                  5%</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="taxCategory2" aria-hidden="aria-hidden">Standard Rated @
+                  50%</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="taxCategory3" aria-hidden="aria-hidden">Zero Rated</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="taxCategory4" aria-hidden="aria-hidden">Standard Rated @
+                  15%</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-group mdDiv">
+          <label for="catagoryRemarks">Catagory Remarks</label>
+          <textarea class="form-control" id="catagoryRemarks" rows="3" placeholder="Catagory Remarks"></textarea>
+        </div>
+
+        <div class="form-group mdDiv">
+          <label for="tokenPrinter">Token Printer</label>
+
+          <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="tokenPrinter1" value="1" name="tokenPrinter"
+                  checked="checked" />
+                <p class="select-box__input-text">None</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="tokenPrinter2" value="2" name="tokenPrinter" />
+                <p class="select-box__input-text">Printer 1</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="tokenPrinter3" value="3" name="tokenPrinter" />
+                <p class="select-box__input-text">Printer 2</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="tokenPrinter4" value="4" name="tokenPrinter" />
+                <p class="select-box__input-text">Printer 3</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="tokenPrinter5" value="5" name="tokenPrinter" />
+                <p class="select-box__input-text">Printer 4</p>
+              </div>
+              <img class="select-box__icon" src="../../assets/down-arrow.svg" alt="Arrow Icon" aria-hidden="true" />
+            </div>
+            <ul class="select-box__list">
+              <li>
+                <label class="select-box__option" for="tokenPrinter1" aria-hidden="aria-hidden">None</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="tokenPrinter2" aria-hidden="aria-hidden">Printer 1</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="tokenPrinter3" aria-hidden="aria-hidden">Printer 2</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="tokenPrinter4" aria-hidden="aria-hidden">Printer 3</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="tokenPrinter5" aria-hidden="aria-hidden">Printer 4</label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="form-check-div">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="checkedYes" />
+              <label class="form-check-label" for="checkedYes">Show In POS</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn reset">Reset</button>
+        <button type="button" class="btn success">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

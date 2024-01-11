@@ -1,0 +1,36 @@
+@import "/src/styles.scss";
+
+// Breadcrumb
+#unit-breadcrumb {
+  @include breadcrumb;
+}
+
+// Table
+#unit-table {
+  @include table-div;
+}
+
+// modal popup
+#unitAddList {
+  @include modal;
+
+  .modal-dialog {
+    .modal-content {
+      @include media-md {
+        min-width: 700px;
+      }
+
+      .modal-body {
+        .form-group {
+          margin-bottom: 1rem;
+        }
+      }
+
+      .modal-footer {
+        button {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

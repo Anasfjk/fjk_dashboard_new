@@ -1,0 +1,177 @@
+<!-- Breadcrumb -->
+<div id="unit-breadcrumb">
+  <p class="breadcrumb-text">
+    <a href="#"><span class="material-symbols-rounded">
+        home
+      </span></a> > <a>Product</a> > <a class="active">Units</a>
+  </p>
+</div>
+
+<!-- unit table -->
+<div id="unit-table">
+  <div class="table-top">
+    <div class="search-div">
+      <input type="search" class="search" name id placeholder="Type unit name..." />
+      <i class="far fa-search search-icon"></i>
+    </div>
+
+    <div class="top-btn-div" type="button" data-bs-toggle="modal" data-bs-target="#unitAddList">
+      <span class="material-symbols-rounded top-btn-icon">add</span>
+      <button class="top-btn">Add Unit</button>
+    </div>
+  </div>
+
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Sl. No.</th>
+          <th>Unit</th>
+          <th>Unit Code</th>
+          <th>Unit Display Code</th>
+          <th>Base Qty.</th>
+          <th>Unit Type</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of units; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{data.unit_name}}</td>
+          <td>{{data.unit_code}}</td>
+          <td>{{data.unit_display}}</td>
+          <td>{{data.unit_base_qty}}</td>
+          <td>{{data.unit_type}}</td>
+          <td class="action-btn-div">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#unitAddList" class="action-btn pending"
+              data-customTooltip="Edit">
+              <span class="material-symbols-rounded"> edit_square </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button>
+      <span class="material-symbols-rounded"> keyboard_double_arrow_left </span>
+    </button>
+    <button>
+      <span class="material-symbols-rounded"> keyboard_arrow_left </span>
+    </button>
+    <button>1</button>
+    <button>
+      <span class="material-symbols-rounded"> navigate_next </span>
+    </button>
+    <button>
+      <span class="material-symbols-rounded">
+        keyboard_double_arrow_right
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="unitAddList" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="staticBackdropLabel">Unit</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body formDiv">
+
+        <div class="form-group mdDiv">
+          <label for="unitType">Unit Type</label>
+
+          <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="unitType1" value="1" name="unitType"
+                  checked="checked" />
+                <p class="select-box__input-text">Base unit</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="unitType2" value="2" name="unitType" />
+                <p class="select-box__input-text">Derived unit</p>
+              </div>
+              <img class="select-box__icon" src="../../assets/down-arrow.svg" alt="Arrow Icon" aria-hidden="true" />
+
+            </div>
+            <ul class="select-box__list">
+              <li>
+                <label class="select-box__option" for="unitType1" aria-hidden="aria-hidden">Base unit</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="unitType2" aria-hidden="aria-hidden">Derived unit</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-group mdDiv">
+          <label for="selectBaseUnit">Select Base Unit</label>
+          <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="selectBaseUnit1" value="1" name="selectBaseUnit"
+                  checked="checked" />
+                <p class="select-box__input-text">Base unit</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="selectBaseUnit2" value="2" name="selectBaseUnit" />
+                <p class="select-box__input-text">Derived unit</p>
+              </div>
+              <img class="select-box__icon" src="../../assets/down-arrow.svg" alt="Arrow Icon" aria-hidden="true" />
+
+            </div>
+            <ul class="select-box__list">
+              <li>
+                <label class="select-box__option" for="selectBaseUnit1" aria-hidden="aria-hidden">Base unit</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="selectBaseUnit2" aria-hidden="aria-hidden">Derived unit</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-group mdDiv">
+          <label for="unitName">Unit Name</label>
+          <input type="text" class="form-control" id="unitName" placeholder="Enter Unit Name" />
+        </div>
+
+        <div class="form-group mdDiv">
+          <label for="unitQty">Unit Qty</label>
+          <input type="text" class="form-control" id="unitQty" placeholder="Enter Unit Qty" />
+        </div>
+
+        <div class="form-group mdDiv">
+          <label for="unitCode">Unit Code</label>
+          <input type="text" class="form-control" id="unitCode" placeholder="Enter Unit Code" />
+        </div>
+
+        <div class="form-group mdDiv">
+          <label for="unitDisplayCode"> Unit Display Code</label>
+          <input type="text" class="form-control" id="
+            unitDisplayCode" placeholder="Enter Unit Display Code" />
+        </div>
+
+        <div class="form-group mdDiv">
+          <label for="unitComment">Comment</label>
+          <textarea class="form-control" id="unitComment" rows="3" placeholder="Comment"></textarea>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn reset">Reset</button>
+        <button type="button" class="btn success">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

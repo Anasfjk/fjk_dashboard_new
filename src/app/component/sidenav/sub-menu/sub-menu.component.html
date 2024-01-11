@@ -1,0 +1,43 @@
+<ul class="sublevel-nav"
+  *ngIf="collapsed && data.items && data.items.length > 0"
+  [@submenu]="
+  expanded
+    ? { value: 'visible', params: animationParams }
+    : { value: 'hidden', params: animationParams }
+">
+  <li *ngFor="let item of data.items" class="sublevel-nav-item">
+    <a
+      class="sublevel-nav-link"
+      (click)="handleClick(item)"
+      *ngIf="item.items && item.items.length > 0"
+    >
+      <span class="sublevel-link-text" *ngIf="collapsed">{{ item.label }}</span>
+          <i
+            *ngIf="data.items && collapsed"
+            class="menu-collapse-icon"
+            [ngClass]="
+              !data.expanded ? 'fal fa-angle-right' : 'fal fa-angle-down'
+            "
+          ></i>
+    </a>
+    <a
+      class="sublevel-nav-link"
+      *ngIf="!item.items || (item.items && item.items.length === 0)"
+      [routerLink]="[item.routerLink]"
+      routerLinkActive="active-sublevel"
+      [routerLinkActiveOptions]="{ exact: false }"
+    >
+      <span class="sublevel-link-text" *ngIf="collapsed">{{ item.label }}</span>
+    </a>
+    
+    <div *ngIf="item.items && item.items.length > 0">
+      <app-sub-menu
+        [data]="item"
+        [collapsed]="collapsed"
+        [multiple]="multiple"
+        [expanded]="item.expanded"
+      >
+      </app-sub-menu>
+    </div>
+  </li>
+</ul>

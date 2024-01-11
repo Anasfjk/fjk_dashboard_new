@@ -1,0 +1,166 @@
+<!-- Breadcrumb -->
+<div id="sub-catagory-breadcrumb">
+  <p class="breadcrumb-text">
+    <a href="#"><span class="material-symbols-rounded">
+        home
+      </span></a> > <a>Product</a> > <a class="active">Sub catagory</a>
+  </p>
+</div>
+
+<!-- sub catagory table -->
+<div id="sub-catagory-table">
+  <div class="table-top">
+    <div class="search-div">
+      <input type="search" class="search" name id placeholder="Type sub catagory name..." />
+      <i class="far fa-search search-icon"></i>
+    </div>
+
+    <div class="top-btn-div" type="button" data-bs-toggle="modal" data-bs-target="#subCatagoryAddList">
+      <span class="material-symbols-rounded top-btn-icon">add</span>
+      <button class="top-btn">Add Unit</button>
+    </div>
+  </div>
+
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Sl. No.</th>
+          <th>Sub Category</th>
+          <th>Catagory</th>
+          <th>Remark</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let data of subcat_all; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{data.cat_name}}</td>
+          <td>{{data.cat_name}}</td>
+          <td>{{data.subcat_remarks}}</td>
+          <td class="action-btn-div">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#subCatagoryAddList" class="action-btn pending"
+              data-customTooltip="Edit">
+              <span class="material-symbols-rounded"> edit_square </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button>
+      <span class="material-symbols-rounded"> keyboard_double_arrow_left </span>
+    </button>
+    <button>
+      <span class="material-symbols-rounded"> keyboard_arrow_left </span>
+    </button>
+    <button>1</button>
+    <button>
+      <span class="material-symbols-rounded"> navigate_next </span>
+    </button>
+    <button>
+      <span class="material-symbols-rounded">
+        keyboard_double_arrow_right
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- Poppup Modal -->
+<div class="modal fade" id="subCatagoryAddList" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="staticBackdropLabel">Sub Catagory</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body formDiv">
+
+        <div class="form-group lgDiv">
+          <label for="selectcatagory">Select Parent Catagory</label>
+          <!-- <select class="form-control" id="selectcatagory">
+              <option>Standard Rated @ 5%</option>
+              <option>Standard Rated @ 50%</option>
+              <option>Zero Rated</option>
+              <option>Standard Rated @ 15%</option>
+            </select> -->
+
+          <div class="select-box select-box2">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="parentCatagory1" value="1" name="parentCatagory"
+                  checked="checked" />
+                <p class="select-box__input-text">Parent Catagory 1</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="parentCatagory2" value="2" name="parentCatagory" />
+                <p class="select-box__input-text">Parent Catagory 2</p>
+              </div>
+              <img class="select-box__icon" src="../../assets/down-arrow.svg" alt="Arrow Icon" aria-hidden="true" />
+
+            </div>
+            <ul class="select-box__list">
+              <li>
+                <label class="select-box__option" for="parentCatagory1" aria-hidden="aria-hidden">Parent Catagory
+                  1</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="parentCatagory2" aria-hidden="aria-hidden">Parent Catagory
+                  2</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-group lgDiv">
+          <label for="subCatagoryName">Sub Catagory Name</label>
+          <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="subCatagoryName1" value="1" name="subCatagoryName"
+                  checked="checked" />
+                <p class="select-box__input-text">None</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="subCatagoryName2" value="2" name="subCatagoryName" />
+                <p class="select-box__input-text">Catagory 1</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="subCatagoryName3" value="3" name="subCatagoryName" />
+                <p class="select-box__input-text">Catagory 2</p>
+              </div>
+              <img class="select-box__icon" src="../../assets/down-arrow.svg" alt="Arrow Icon" aria-hidden="true" />
+            </div>
+            <ul class="select-box__list">
+              <li>
+                <label class="select-box__option" for="subCatagoryName1" aria-hidden="aria-hidden">None</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="subCatagoryName2" aria-hidden="aria-hidden">Catagory 1</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="subCatagoryName3" aria-hidden="aria-hidden">Catagory 2</label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="form-check-div">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="checkedYes" />
+              <label class="form-check-label" for="checkedYes">Show In POS</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn reset">Reset</button>
+        <button type="button" class="btn success">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
